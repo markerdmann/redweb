@@ -853,6 +853,4 @@ def template_info():
     return dict(returned_value=returned_value, db_size=db_size, 
                 search_result=search_result, info=info)    
 
-
-#run it!
-run()
+application = bottle.default_app()
