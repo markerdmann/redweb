@@ -17,6 +17,7 @@ __author__ = 'Ted Nyman'
 __version__ = '0.2.3'
 __license__ = 'MIT'
 
+import json
 
 from bottle import route, request, response, view, send_file, run
 import redis
@@ -24,10 +25,17 @@ import bottle
 import string
 
 # Bottle debug - remove in production!
-bottle.debug(True)
+#bottle.debug(True)
+
+# Load the dotcloud environment.json
+with open('/home/dotcloud/environment.json') as f:
+    env = json.loads(f.read())
 
 # The main redis object
-r = redis.Redis()
+redis_host = env['DOTCLOUD_REDIS_REDIS_HOST']
+redis_port = int(env['DOTCLOUD_REDIS_REDIS_PORT'])
+redis_password = env['DOTCLOUD_REDIS_REDIS_PASSWORD']
+r = redis.Redis(host=redis_host, port=redis_port, password=redis_password)
 
 # returned_value defaults to empty string
 returned_value = ""
