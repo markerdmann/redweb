@@ -38,7 +38,7 @@
               success: function(response) {
                   var el = $('#returned_value');
                   el.animate({opacity: 0}, 100, function() {
-                      var ret_val = response.returned_value;
+                      var ret_val = response.returned_value || "nil";
                       if (ret_val.constructor === Array) {
                           ret_val = ret_val.join(', ');
                       }
