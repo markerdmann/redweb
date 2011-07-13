@@ -8,7 +8,6 @@
   <script type="text/javascript" src="/static/jquery-1.3.2.min.js"></script>
   <script type="text/javascript" src="/static/jquery-ui-1.7.2.custom.min.js"></script>
   <script type="text/javascript" src="/static/jquery.form.js"></script>
-
   <script type="text/javascript" src="/static/vanadium-min.js" ></script> 
   <script type="text/javascript">
   $(document).ready(function(){
